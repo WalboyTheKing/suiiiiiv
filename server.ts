@@ -13,14 +13,20 @@ const wss = new WebSocketServer({ noServer: true });
 
 server.on('upgrade', (request, socket, head) => {
   try {
+    const protocol = request.headers['sec-websocket-protocol'];
+    if (protocol === 'vite-hmr') {
+      return; // Handled by Vite's internal HMR handler mounted on server
+    }
+
     const { pathname } = new URL(request.url || '', `http://${request.headers.host || 'localhost'}`);
     if (pathname === '/ws' || pathname === '/' || pathname === '') {
       wss.handleUpgrade(request, socket, head, (ws) => {
         wss.emit('connection', ws, request);
       });
-    } else {
-      socket.destroy();
+      return;
     }
+
+    socket.destroy();
   } catch {
     socket.destroy();
   }
@@ -371,7 +377,7 @@ async function startServer() {
     const vite = await createViteServer({
       server: {
         middlewareMode: true,
-        hmr: false,
+        hmr: { server },
       },
       appType: 'spa',
     });

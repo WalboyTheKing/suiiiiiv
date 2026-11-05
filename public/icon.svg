@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e50914" />
+      <stop offset="65%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)" />
+
+  <!-- Outer Neon Ring -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#goldGrad)" stroke-width="14" filter="url(#glow)" />
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#22c55e" stroke-width="4" stroke-dasharray="16 12" />
+
+  <!-- Speed Motion Chevron Accents -->
+  <path d="M120 220 L160 256 L120 292" fill="none" stroke="#00f5d4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M150 220 L190 256 L150 292" fill="none" stroke="#00f5d4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+
+  <!-- Center Trophy #7 Emblem -->
+  <path d="M 210 140 L 330 140 L 260 370 L 210 370 L 275 190 L 210 190 Z" fill="url(#goldGrad)" filter="url(#glow)" />
+  
+  <!-- Mini Soccer Ball Accent -->
+  <circle cx="340" cy="330" r="32" fill="#ffffff" stroke="#0f172a" stroke-width="6" />
+  <polygon points="340,314 354,324 349,340 331,340 326,324" fill="#0f172a" />
+</svg>

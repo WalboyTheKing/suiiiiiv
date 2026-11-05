@@ -1,0 +1,6 @@
+{
+  "name": "Speed Rush 3D",
+  "description": "High-octane 3D endless runner inspired by football passion and energetic streaming arcade culture. Run, jump, slide, collect power-ups, and customize your runner across dynamic 3D worlds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

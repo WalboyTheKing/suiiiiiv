@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Cross-device Mobile & Fullscreen Optimizations (Android, iPhone, iPad, Desktop) */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0a0d14;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+  position: fixed;
+  inset: 0;
+}
+
+/* Prevent accidental tap highlight gray overlay on Android Chrome & Mobile Safari */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+/* iOS Notch & Home Indicator Safe Area Utilities */
+.safe-top {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+.safe-left {
+  padding-left: max(0.75rem, env(safe-area-inset-left));
+}
+.safe-right {
+  padding-right: max(0.75rem, env(safe-area-inset-right));
+}
+
+/* Game canvas styling */
+canvas {
+  display: block;
+  touch-action: none;
+}
